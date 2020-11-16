@@ -1,0 +1,277 @@
+
+/* THE SOCIAL MEDIA HANDLES NEED TO BE FIXED FOR QUERIES
+MOVE ONTO PROJECTS AFTER THAT. DONE */
+
+
+
+
+
+
+
+
+/* PORTFOLIO CSS (ABOUT + PROJECTS)========================================================== */
+/* ======================================================================== */
+
+body{
+    background-color: rgb(228, 228, 228);
+    scroll-y: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* NAVBAR ---------------------------------------------------------------- */
+nav{
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    border-bottom: solid rgb(0, 0, 0) 1px;
+    font-family: serif
+}
+nav li{
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none;
+}
+nav a{
+    text-decoration: none;
+
+}
+nav a:hover{
+    text-decoration: underline;
+}
+nav img{
+    height: 120px;
+    float: left;
+}
+
+/* FOOTER ----------------------------------------------------------------- */
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 7pt;
+}
+
+
+
+/* CONTAINER-------------------------------------------------------------- */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(3, 250px);
+    grid-gap: 50px;
+    padding: 40px;
+    justify-content: center;
+    height: 660px;
+    margin: auto;
+    margin-bottom: 61px;
+}
+
+.project{
+    height: 250px;
+    width: 250px;
+    border: solid black;
+    justify-self: center;
+    grid-template-rows: .25fr, 1.75fr;
+    opacity: .4;
+    text-align: center;
+}
+
+.project h4{
+    margin-top: 4pt;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* PROJECTS---------------------------------------------------------------- */
+
+.project img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* ABOUT PAGE ------------------------------------------------------------- */
+
+#about{
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-bottom: -187px;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: .25fr, 1fr, 1fr, 1fr;
+    grid-template-areas: 
+    "portrait name name name"
+    "portrait desc . ."
+}
+
+#portrait{
+    display: grid;
+    grid-area: portrait;
+    margin-right: 100px;
+    margin-bottom: auto;
+}
+#portrait img{
+    height: 300px;
+    justify-self: center;
+}
+
+#name{
+    grid-area: name;
+    width: 100%;
+    margin-top: -20px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#desc{
+    display: grid;
+    grid-area: desc;
+    margin-bottom: 500px;
+    font-size: 14pt;
+}
+
+#portrait li{
+    list-style-type: none;
+    color: black;
+    text-align: left;
+    padding: 3px;
+    text-decoration: none;
+    font-family: serif;
+    font-size: 12pt;
+}
+
+#responsive-list{
+    visibility: hidden;
+}
+
+li button{
+    height: 20px;
+    font-size: 9pt;
+}
+
+#portrait ul{
+    padding: 0;
+}
+
+
+#portrait li :hover{
+    text-decoration: underline;
+}
+
+
+/* QUERIES PORTFOLIO PAGE / ABOUT PAGE------------------------------------------------- */
+
+@media screen and (max-width: 2000px) {
+    #desc{
+        width: 500px; 
+        }
+    footer{
+    position: relative;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+        height: auto;
+    }
+    #desc{
+        width: 200px; 
+    }
+
+  }
+
+
+@media screen and (max-width: 880px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+    #responsive-list{
+        visibility: visible;
+    }
+
+    #about ul{
+        display: none;
+    }
+    #about{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+        grid-template-areas: 
+        "name"
+        "portrait"
+        "desc"
+        "desc"
+    }
+    
+    #name{
+        grid-template-areas: name;
+        text-align: left;
+    }
+    #portrait{
+        grid-template-areas: name;
+        justify-self: left;
+        
+    }
+
+    #desc{
+        text-align: left;
+    }
+
+  }
+
+  @media screen and (max-width: 370px) {
+    #about{
+        display: grid;
+        grid-template-columns: 250px;
+        grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+        grid-template-areas: 
+        "name"
+        "portrait"
+        "desc"
+        "desc"
+    }
+    #name{
+        grid-template-areas: name;
+        text-align: left;
+    }
+    #portrait{
+        grid-template-areas: name;
+        justify-self: left;
+    }
+    #portrait img{
+        width: 80vw;
+        height: 200px;
+        margin: auto;
+    }
+
+    #desc{
+        text-align: left;
+    }
+    footer{
+        margin: auto;
+        justify-self: center;
+    }
+
+  }
+
+/* PORTFOLIO CSS (END) (ABOUT + PROJECTS) ==================================================== */
+/* ======================================================================== */
